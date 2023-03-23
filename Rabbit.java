@@ -7,12 +7,12 @@ public class Rabbit extends Pet {
     }
 
     @Override
-    public int price() {
+    public int getPrice() {
         price = 75;
         return price;
     } 
 
-    public void personality() {
+    public void getPersonality() {
         System.out.println(name + " likes to eat carrots and hop around");
     }
 }

@@ -7,12 +7,12 @@ public class Cat extends Pet {
     }
 
     @Override
-    public int price() {
+    public int getPrice() {
         price = 250;
         return price;
     } 
 
-    public void personality() {
+    public void getPersonality() {
         System.out.println(name + " likes to chase mice and take long naps");
     }
 }
