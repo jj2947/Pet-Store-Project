@@ -11,6 +11,7 @@ public abstract class Pet {
   protected String breed;
   protected Gender gender;
   protected static int id;
+  private boolean sold;
 
   public Pet(String name, String animal, String breed, String age, Gender gender) {
     this.name = name;
@@ -18,9 +19,10 @@ public abstract class Pet {
     this.age = age;
     this.gender = gender;
     this.breed = breed;
+    this.sold = false;
   }
 
-  public void details() {
+  public void printDetails() {
     System.out.println(name + "," + gender + " " + breed + " " + animal + " " + age + " years old");
   }
 
@@ -28,5 +30,18 @@ public abstract class Pet {
     return animal;
   }
 
-  abstract public int price();
+  abstract public int getPrice();
+
+  public boolean isSold() {
+    return sold;
+  }
+
+  public void sell() {
+    this.sold = true;
+  }
+
+  @Override
+  public String toString() {
+    return "Pet [name = "+name+", animal = "+animal+", breed = "+breed+", age = "+age+", gender = "+gender+"]";
+  }
 }
