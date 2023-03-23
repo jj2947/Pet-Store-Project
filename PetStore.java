@@ -54,4 +54,19 @@ public class PetStore {
     return false;
   }
 
+  public void printInventoryDetails() {
+    System.out.println("Inventory details for " + shopName + ":");
+
+    for (int i = 0; i < Pets.size(); i++) {
+        Pet pet = Pets.get(i);
+      System.out.print((i + 1) + ": ");
+      if (pet.isSold()) {
+        System.out.print("***SOLD*** ");
+      } else {
+        System.out.print("AVAILABLE  ");
+      }
+      System.out.println(pet);
+    }
+  }
+
 }
