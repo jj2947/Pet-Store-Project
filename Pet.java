@@ -11,7 +11,7 @@ public abstract class Pet {
   protected String breed;
   protected Gender gender;
   protected static int id;
-  private boolean sold;
+  private boolean adopted;
 
   public Pet(String name, String animal, String breed, String age, Gender gender) {
     this.name = name;
@@ -19,7 +19,7 @@ public abstract class Pet {
     this.age = age;
     this.gender = gender;
     this.breed = breed;
-    this.sold = false;
+    this.adopted = false;
   }
 
   public void printDetails() {
@@ -33,11 +33,11 @@ public abstract class Pet {
   abstract public int getPrice();
 
   public boolean isSold() {
-    return sold;
+    return adopted;
   }
 
   public void sell() {
-    this.sold = true;
+    this.adopted = true;
   }
 
   @Override
