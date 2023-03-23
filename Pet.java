@@ -30,6 +30,10 @@ public abstract class Pet {
     return animal;
   }
 
+  public String getName() {
+    return name;
+  }
+
   abstract public int getPrice();
 
   public boolean isSold() {
