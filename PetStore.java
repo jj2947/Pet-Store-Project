@@ -35,4 +35,23 @@ public class PetStore {
     return null;
   }
 
+  public void purchasePet(Pet pet) {
+    if (alreadyHavePet(pet)) {
+      System.out.println(pet.getName() + " already in stock, therefore won't purchase again.");
+    } else {
+      Pets.add(pet);
+      cashBalance -= pet.getPrice();
+      System.out.println("Added pet to shop: " + pet.toString());
+    }
+  }
+
+  private boolean alreadyHavePet(Pet checkingIfInStock) {
+    for (Pet petInStock : Pets) {
+      if (petInStock == checkingIfInStock) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }
