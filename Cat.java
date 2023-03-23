@@ -13,6 +13,6 @@ public class Cat extends Pet {
     } 
 
     public void personality() {
-        System.out.println(name + " like to chase mice and take long naps");
+        System.out.println(name + " likes to chase mice and take long naps");
     }
 }
