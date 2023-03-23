@@ -67,6 +67,21 @@ public class PetStore {
       }
       System.out.println(pet);
     }
+    System.out.println(
+        "Balance for "
+            + getShopName()
+            + " after buying pets is $"
+            + getCashBalance());
+  }
+
+  public boolean sellPet(String name) {
+    Pet pet = searchForPet(name);
+    if (pet != null && !pet.isSold()) {
+      cashBalance += pet.getPrice();
+      pet.sell();
+      return true;
+    }
+    return false;
   }
 
 }
