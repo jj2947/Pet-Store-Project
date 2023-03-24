@@ -4,12 +4,14 @@ public class PetStore {
 
   private String shopName;
   private double cashBalance;
+  private double initialBalance;
 
   private ArrayList<Pet> Pets = new ArrayList<Pet>();
 
   public PetStore(String shopName, double initialBalance) {
     this.shopName = shopName;
     this.cashBalance = initialBalance;
+    this.initialBalance = initialBalance;
   }
 
   public String getShopName() {
@@ -40,9 +42,10 @@ public class PetStore {
       System.out.println(pet.getName() + " already in stock, therefore won't purchase again.");
     } else {
       Pets.add(pet);
-      cashBalance -= pet.getPrice();
+      cashBalance -= pet.getCostPrice();
       System.out.println("Added pet to shop: " + pet.toString());
     }
+    System.out.println("There are " + getNumPets() + " at " + getShopName());
   }
 
   private boolean alreadyHavePet(Pet checkingIfInStock) {
@@ -67,20 +70,25 @@ public class PetStore {
       }
       System.out.println(pet);
     }
+
     System.out.println(
         "Balance for " + getShopName() + " after buying pets is $" + getCashBalance());
+
+    double profit = getCashBalance() - this.initialBalance;
+
+    System.out.println(getShopName() + " has made $" + profit);
   }
 
   public void printPetDetails() {
     for (Pet pet : Pets) {
-      pet.getPersonality();
+      System.out.println(pet.getPersonality());
     }
   }
 
   public boolean sellPet(String name) {
     Pet pet = searchForPet(name);
     if (pet != null && !pet.isSold()) {
-      cashBalance += pet.getCostPrice();
+      cashBalance += pet.getPrice();
       pet.sell();
       return true;
     }
