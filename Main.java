@@ -14,6 +14,7 @@ class Main {
     Bird tweety = new Bird("Tweety", "Bird", "Budgie", "2", Pet.Gender.MALE);
     Dog sam = new Dog("Sam", "Dog", "German Shepherd", "4", Pet.Gender.MALE);
     Bird bigBird = new Bird("Big Bird", "Bird", "Rainbow Lorikeet", "6", Pet.Gender.FEMALE);
+	Bird chickie = new Bird("Chickie", "Bird", "Cockatoo", "38", Pet.Gender.FEMALE);
 
     // Buy some pets for the shop
     shop.purchasePet(lola);
@@ -21,6 +22,7 @@ class Main {
     shop.purchasePet(tweety);
     shop.purchasePet(tweety);
     shop.purchasePet(sam);
+	shop.purchasePet(chickie);
 
     shop.printInventoryDetails();
 
