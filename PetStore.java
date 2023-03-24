@@ -38,21 +38,34 @@ public class PetStore {
   }
 
   public void purchasePet(Pet pet) {
-    if (alreadyHavePet(pet)) {
-      System.out.println(pet.getName() + " already in stock, therefore won't purchase again.");
-    } else {
+    if(!alreadyHaveEnoughPets(pet)) {
       Pets.add(pet);
       cashBalance -= pet.getCostPrice();
       System.out.println("Added pet to shop: " + pet.toString());
     }
   }
 
-  private boolean alreadyHavePet(Pet checkingIfInStock) {
+  private boolean alreadyHaveEnoughPets(Pet checkingIfInStock) {
+    int numPets = 0;
+    String species;
+
     for (Pet petInStock : Pets) {
+      if (petInStock.getSpecies().equals(checkingIfInStock.getSpecies())) {
+        species = petInStock.getSpecies();
+        numPets++;
+        if (numPets >= 2) {
+            System.out.println("There are already 2 " + species+ "s at "
+            + getShopName()+ ", so "+checkingIfInStock.getName() +" has not been purchased");
+          return true;
+        }
+      }
       if (petInStock == checkingIfInStock) {
+        System.out.println(petInStock.getName()+ ", is already at "
+        +getShopName() + " so "+checkingIfInStock.getName() +" has not been purchased again");
         return true;
       }
     }
+
     return false;
   }
 
@@ -70,8 +83,7 @@ public class PetStore {
       System.out.println(pet);
     }
 
-    System.out.println(
-        "Balance for " + getShopName() + " is $" + getCashBalance());
+    System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
 
     double profit = getCashBalance() - this.initialBalance;
 
