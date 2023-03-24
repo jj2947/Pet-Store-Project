@@ -12,12 +12,14 @@ class Main {
     Rabbit lola = new Rabbit("Lola", "Bunny", "Dwarf Lop", "3", Pet.Gender.FEMALE);
     Cat garfield = new Cat("Garfield", "Cat", "Domestic Shorthair", "10", Pet.Gender.MALE);
     Bird tweety = new Bird("Tweety", "Bird", "Budgie", "2", Pet.Gender.MALE);
+	Dog sam = new Dog("Sam", "Dog", "German Shepherd", "4", Pet.Gender.MALE);
 
 	// Buy some pets for the shop
     shop.purchasePet(lola);
     shop.purchasePet(garfield);
     shop.purchasePet(tweety);
     shop.purchasePet(tweety);
+	shop.purchasePet(sam);
 
 	// Print out cash balance of shop
     System.out.println(
