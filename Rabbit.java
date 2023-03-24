@@ -21,7 +21,7 @@ public class Rabbit extends Pet {
 
     @Override
     public void getPersonality() {
-        System.out.println(name + " the " +breed+ " " +animal+" likes to eat carrots and hop around");
+        System.out.println(name + " the " +age+ " year old " +breed+ " " +animal+" likes to eat carrots and hop around");
     }
 }
 

@@ -21,6 +21,6 @@ public class Dog extends Pet {
 
     @Override
     public void getPersonality() {
-        System.out.println(name + " the " +breed+ " " +animal+" likes to play fetch at the beach and go swimming");
+        System.out.println(name + " the " +age+ " year old " +breed+ " " +animal+" likes to play fetch at the beach and go swimming");
     }
 }

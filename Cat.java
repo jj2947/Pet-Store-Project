@@ -21,6 +21,6 @@ public class Cat extends Pet {
 
     @Override
     public void getPersonality() {
-        System.out.println(name + " the " +breed+ " " +animal+" likes to chase mice and take long naps");
+        System.out.println(name + " the " +age+ " year old " +breed+ " " +animal+" likes to chase mice and take long naps");
     }
 }

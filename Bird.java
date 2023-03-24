@@ -22,6 +22,6 @@ public class Bird extends Pet {
   @Override
   public void getPersonality() {
     System.out.println(
-        name + " the " + breed + " " + animal + " likes to be cheeky and imitate what you say");
+        name + " the " +age+ " year old "+ breed + " " + animal + " likes to be cheeky and imitate what you say");
   }
 }
