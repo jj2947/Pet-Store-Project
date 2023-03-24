@@ -20,6 +20,9 @@ class Main {
     System.out.println(
         "Balance for " + shop.getShopName() + " after buying pets is $" + shop.getCashBalance());
 
+    // Personalities of all the pets in the shop
+    shop.printPetDetails();
+
     // Try to sell a Pet
     boolean success = shop.sellPet("Tweety");
     if (success) {
@@ -28,7 +31,7 @@ class Main {
       System.out.println("Could not sell: " + tweety.getName());
     }
 
-	// Try to sell a Pet
+    // Try to sell a Pet
     success = shop.sellPet("Garfield");
     if (success) {
       System.out.println("Sold pet: " + garfield.getName());
@@ -36,7 +39,7 @@ class Main {
       System.out.println("Could not sell: " + garfield.getName());
     }
 
-	// Try to sell a Pet
+    // Try to sell a Pet
     success = shop.sellPet("Lola");
     if (success) {
       System.out.println("Sold pet: " + lola.getName());

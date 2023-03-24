@@ -74,6 +74,12 @@ public class PetStore {
             + getCashBalance());
   }
 
+  public void printPetDetails() {
+    for (Pet pet : Pets) {
+        pet.getPersonality();
+    }
+  }
+
   public boolean sellPet(String name) {
     Pet pet = searchForPet(name);
     if (pet != null && !pet.isSold()) {
