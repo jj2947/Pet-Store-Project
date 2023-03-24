@@ -28,6 +28,22 @@ class Main {
       System.out.println("Could not sell: " + tweety.getName());
     }
 
+	// Try to sell a Pet
+    success = shop.sellPet("Garfield");
+    if (success) {
+      System.out.println("Sold pet: " + garfield.getName());
+    } else {
+      System.out.println("Could not sell: " + garfield.getName());
+    }
+
+	// Try to sell a Pet
+    success = shop.sellPet("Lola");
+    if (success) {
+      System.out.println("Sold pet: " + lola.getName());
+    } else {
+      System.out.println("Could not sell: " + garfield.getName());
+    }
+
     // Print inventory details
     shop.printInventoryDetails();
     System.out.println();
