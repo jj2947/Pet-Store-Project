@@ -45,7 +45,6 @@ public class PetStore {
       cashBalance -= pet.getCostPrice();
       System.out.println("Added pet to shop: " + pet.toString());
     }
-    System.out.println("There are " + getNumPets() + " at " + getShopName());
   }
 
   private boolean alreadyHavePet(Pet checkingIfInStock) {
@@ -58,7 +57,7 @@ public class PetStore {
   }
 
   public void printInventoryDetails() {
-    System.out.println("Inventory details for " + shopName + ":");
+    System.out.println("\nInventory details for " + shopName + ":");
 
     for (int i = 0; i < Pets.size(); i++) {
       Pet pet = Pets.get(i);
@@ -72,7 +71,7 @@ public class PetStore {
     }
 
     System.out.println(
-        "Balance for " + getShopName() + " after buying pets is $" + getCashBalance());
+        "Balance for " + getShopName() + " is $" + getCashBalance());
 
     double profit = getCashBalance() - this.initialBalance;
 
@@ -80,9 +79,11 @@ public class PetStore {
   }
 
   public void printPetDetails() {
+    System.out.println();
     for (Pet pet : Pets) {
       pet.getPersonality();
     }
+    System.out.println();
   }
 
   public void sellPet(String name) {
