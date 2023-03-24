@@ -20,7 +20,7 @@ public class Bird extends Pet{
     }
 
     @Override
-    public void getPersonality() {
-        System.out.println(name + " likes to be cheeky and imitate what you say");
+    public String getPersonality() {
+        return name + " likes to be cheeky and imitate what you say";
     }
 }

@@ -20,7 +20,7 @@ public class Cat extends Pet {
     }
 
     @Override
-    public void getPersonality() {
-        System.out.println(name + " likes to chase mice and take long naps");
+    public String getPersonality() {
+        return name + " likes to chase mice and take long naps";
     }
 }

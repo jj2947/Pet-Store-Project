@@ -38,7 +38,7 @@ public abstract class Pet {
 
   abstract public int getCostPrice();
 
-  abstract public void getPersonality();
+  abstract public String getPersonality();
 
   public boolean isSold() {
     return adopted;
