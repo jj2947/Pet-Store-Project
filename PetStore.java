@@ -34,7 +34,7 @@ public class PetStore {
   }
 
   public void purchasePet(Pet pet) {
-    if(!alreadyHaveEnoughPets(pet)) {
+    if (!alreadyHaveEnoughPets(pet)) {
       Pets.add(pet);
       cashBalance -= pet.getCostPrice();
       System.out.println("Added pet to shop: " + pet.toString());
@@ -46,18 +46,29 @@ public class PetStore {
     String species;
 
     for (Pet petInStock : Pets) {
-      if (petInStock.getSpecies().equals(checkingIfInStock.getSpecies())) {
+      if (petInStock.getSpecies().equals(checkingIfInStock.getSpecies()) && !petInStock.isSold()) {
         species = petInStock.getSpecies();
         numPets++;
         if (numPets >= 2) {
-            System.out.println("There are already 2 " + species+ "s at "
-            + getShopName()+ ", so "+checkingIfInStock.getName() +" has not been purchased");
+          System.out.println(
+              "There are already 2 "
+                  + species
+                  + "s at "
+                  + getShopName()
+                  + ", so "
+                  + checkingIfInStock.getName()
+                  + " has not been purchased");
           return true;
         }
       }
       if (petInStock == checkingIfInStock) {
-        System.out.println(petInStock.getName()+ ", is already at "
-        +getShopName() + " so "+checkingIfInStock.getName() +" has not been purchased again");
+        System.out.println(
+            petInStock.getName()
+                + ", is already at "
+                + getShopName()
+                + " so "
+                + checkingIfInStock.getName()
+                + " has not been purchased again");
         return true;
       }
     }
@@ -84,8 +95,8 @@ public class PetStore {
       System.out.println(pet);
     }
 
-    System.out.println("\n" +petsSold+ " pets have been sold");
-    System.out.println("There are "+petsInStock+ " pets available");
+    System.out.println("\n" + petsSold + " pets have been sold");
+    System.out.println("There are " + petsInStock + " pets available");
 
     System.out.println("\nBalance for " + getShopName() + " is $" + getCashBalance());
 
