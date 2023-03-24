@@ -58,7 +58,7 @@ public class PetStore {
     System.out.println("Inventory details for " + shopName + ":");
 
     for (int i = 0; i < Pets.size(); i++) {
-        Pet pet = Pets.get(i);
+      Pet pet = Pets.get(i);
       System.out.print((i + 1) + ": ");
       if (pet.isSold()) {
         System.out.print("***SOLD*** ");
@@ -68,15 +68,12 @@ public class PetStore {
       System.out.println(pet);
     }
     System.out.println(
-        "Balance for "
-            + getShopName()
-            + " after buying pets is $"
-            + getCashBalance());
+        "Balance for " + getShopName() + " after buying pets is $" + getCashBalance());
   }
 
   public void printPetDetails() {
     for (Pet pet : Pets) {
-        pet.getPersonality();
+      pet.getPersonality();
     }
   }
 
@@ -89,5 +86,4 @@ public class PetStore {
     }
     return false;
   }
-
 }

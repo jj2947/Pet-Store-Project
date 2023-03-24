@@ -8,15 +8,18 @@ class Main {
         "Starting balance for " + shop.getShopName() + " is $" + shop.getCashBalance());
     System.out.println();
 
+	// Create some pet instance
     Rabbit lola = new Rabbit("Lola", "Bunny", "Dwarf Lop", "3", Pet.Gender.FEMALE);
     Cat garfield = new Cat("Garfield", "Cat", "Domestic Shorthair", "10", Pet.Gender.MALE);
     Bird tweety = new Bird("Tweety", "Bird", "Budgie", "2", Pet.Gender.MALE);
 
+	// Buy some pets for the shop
     shop.purchasePet(lola);
     shop.purchasePet(garfield);
     shop.purchasePet(tweety);
     shop.purchasePet(tweety);
 
+	// Print out cash balance of shop
     System.out.println(
         "Balance for " + shop.getShopName() + " after buying pets is $" + shop.getCashBalance());
 
