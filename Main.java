@@ -27,28 +27,11 @@ class Main {
     shop.printPetDetails();
 
     // Try to sell a Pet
-    boolean success = shop.sellPet("Tweety");
-    if (success) {
-      System.out.println("Sold pet: " + tweety.getName());
-    } else {
-      System.out.println("Could not sell: " + tweety.getName());
-    }
+    shop.sellPet("Tweety");
 
-    // Try to sell a Pet
-    success = shop.sellPet("Garfield");
-    if (success) {
-      System.out.println("Sold pet: " + garfield.getName());
-    } else {
-      System.out.println("Could not sell: " + garfield.getName());
-    }
+   shop.sellPet("Garfield");
 
-    // Try to sell a Pet
-    success = shop.sellPet("Lola");
-    if (success) {
-      System.out.println("Sold pet: " + lola.getName());
-    } else {
-      System.out.println("Could not sell: " + garfield.getName());
-    }
+    shop.sellPet("Lola");
 
     // Print inventory details
     shop.printInventoryDetails();

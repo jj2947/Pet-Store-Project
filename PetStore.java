@@ -85,13 +85,14 @@ public class PetStore {
     }
   }
 
-  public boolean sellPet(String name) {
+  public void sellPet(String name) {
     Pet pet = searchForPet(name);
     if (pet != null && !pet.isSold()) {
       cashBalance += pet.getPrice();
       pet.sell();
-      return true;
+      System.out.println("Sold pet: " + pet.getName());
+    } else {
+      System.out.println("Could not sell: " + name);
     }
-    return false;
   }
 }
