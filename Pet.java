@@ -50,6 +50,6 @@ public abstract class Pet {
 
   @Override
   public String toString() {
-    return "Pet [name = "+name+", animal = "+animal+", breed = "+breed+", age = "+age+", gender = "+gender+"]";
+    return "Pet [Name:"+name+", Species"+animal+", Breed:"+breed+", Age:"+age+", Gender:"+gender+"]";
   }
 }
