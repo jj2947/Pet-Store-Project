@@ -66,15 +66,17 @@ public class PetStore {
   }
 
   public void printInventoryDetails() {
-    System.out.println("\nInventory details for " + shopName + ":");
+    System.out.println("\nInventory details for " + shopName + ":\n");
 
     int petsInStock = 0;
+    int petsSold = 0;
 
     for (int i = 0; i < Pets.size(); i++) {
       Pet pet = Pets.get(i);
       System.out.print((i + 1) + ": ");
       if (pet.isSold()) {
         System.out.print("***SOLD*** ");
+        petsSold++;
       } else {
         System.out.print("AVAILABLE  ");
         petsInStock++;
@@ -82,9 +84,10 @@ public class PetStore {
       System.out.println(pet);
     }
 
+    System.out.println("\n" +petsSold+ " pets have been sold");
     System.out.println("There are "+petsInStock+ " pets available");
 
-    System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
+    System.out.println("\nBalance for " + getShopName() + " is $" + getCashBalance());
 
     double profit = getCashBalance() - this.initialBalance;
 
