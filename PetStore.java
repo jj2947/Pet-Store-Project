@@ -81,7 +81,7 @@ public class PetStore {
 
   public void printPetDetails() {
     for (Pet pet : Pets) {
-      System.out.println(pet.getPersonality());
+      pet.getPersonality();
     }
   }
 
