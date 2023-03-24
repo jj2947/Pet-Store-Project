@@ -36,6 +36,10 @@ public abstract class Pet {
 
   abstract public int getPrice();
 
+  abstract public int getCostPrice();
+
+  abstract public void getPersonality();
+
   public boolean isSold() {
     return adopted;
   }

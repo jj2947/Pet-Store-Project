@@ -77,7 +77,7 @@ public class PetStore {
   public boolean sellPet(String name) {
     Pet pet = searchForPet(name);
     if (pet != null && !pet.isSold()) {
-      cashBalance += pet.getPrice();
+      cashBalance += pet.getCostPrice();
       pet.sell();
       return true;
     }

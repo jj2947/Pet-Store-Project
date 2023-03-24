@@ -1,6 +1,7 @@
 public class Cat extends Pet {
 
     private int price;
+    private int costPrice;
 
     public Cat (String name, String animal, String breed, String age, Gender gender) {
         super(name, animal, breed, age, gender);
@@ -12,6 +13,13 @@ public class Cat extends Pet {
         return price;
     } 
 
+    @Override
+    public int getCostPrice() {
+        costPrice = 100;
+        return costPrice;
+    }
+
+    @Override
     public void getPersonality() {
         System.out.println(name + " likes to chase mice and take long naps");
     }
