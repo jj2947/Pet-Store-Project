@@ -21,6 +21,6 @@ public class Dog extends Pet {
 
     @Override
     public String getPersonality() {
-        return name + " likes to play fetch at the beach and go swimming";
+        return name + " the " +breed+ " " +animal+" likes to play fetch at the beach and go swimming";
     }
 }

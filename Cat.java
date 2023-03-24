@@ -21,6 +21,6 @@ public class Cat extends Pet {
 
     @Override
     public String getPersonality() {
-        return name + " likes to chase mice and take long naps";
+        return name + " the " +breed+ " " +animal+" likes to chase mice and take long naps";
     }
 }
