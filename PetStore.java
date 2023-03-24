@@ -22,10 +22,6 @@ public class PetStore {
     return cashBalance;
   }
 
-  public int getNumPets() {
-    return Pets.size();
-  }
-
   public Pet searchForPet(String name) {
     for (Pet pet : Pets) {
       String petLower = pet.getName().toLowerCase();
@@ -72,6 +68,8 @@ public class PetStore {
   public void printInventoryDetails() {
     System.out.println("\nInventory details for " + shopName + ":");
 
+    int petsInStock = 0;
+
     for (int i = 0; i < Pets.size(); i++) {
       Pet pet = Pets.get(i);
       System.out.print((i + 1) + ": ");
@@ -79,9 +77,12 @@ public class PetStore {
         System.out.print("***SOLD*** ");
       } else {
         System.out.print("AVAILABLE  ");
+        petsInStock++;
       }
       System.out.println(pet);
     }
+
+    System.out.println("There are "+petsInStock+ " pets available");
 
     System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
 
