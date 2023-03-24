@@ -7,15 +7,15 @@ public abstract class Pet {
 
   protected String name;
   protected String age;
-  protected String animal;
+  protected String species;
   protected String breed;
   protected Gender gender;
   protected static int id;
   private boolean adopted;
 
-  public Pet(String name, String animal, String breed, String age, Gender gender) {
+  public Pet(String name, String species, String breed, String age, Gender gender) {
     this.name = name;
-    this.animal = animal;
+    this.species = species;
     this.age = age;
     this.gender = gender;
     this.breed = breed;
@@ -23,11 +23,11 @@ public abstract class Pet {
   }
 
   public void printDetails() {
-    System.out.println(name + "," + gender + " " + breed + " " + animal + " " + age + " years old");
+    System.out.println(name + "," + gender + " " + breed + " " + species + " " + age + " years old");
   }
 
   public String getType() {
-    return animal;
+    return species;
   }
 
   public String getName() {
@@ -50,6 +50,6 @@ public abstract class Pet {
 
   @Override
   public String toString() {
-    return "Pet [Name:"+name+", Species:"+animal+", Breed:"+breed+", Age:"+age+", Gender:"+gender+"]";
+    return "Pet [Name:"+name+", Species:"+species+", Breed:"+breed+", Age:"+age+", Gender:"+gender+"]";
   }
 }
