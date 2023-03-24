@@ -26,7 +26,7 @@ public abstract class Pet {
     System.out.println(name + "," + gender + " " + breed + " " + species + " " + age + " years old");
   }
 
-  public String getType() {
+  public String getSpecies() {
     return species;
   }
 
