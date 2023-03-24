@@ -3,8 +3,8 @@ public class Bird extends Pet {
   private int price;
   private int costPrice;
 
-  public Bird(String name, String animal, String breed, String age, Gender gender) {
-    super(name, animal, breed, age, gender);
+  public Bird(String name, String species, String breed, String age, Gender gender) {
+    super(name, species, breed, age, gender);
   }
 
   @Override
@@ -22,6 +22,6 @@ public class Bird extends Pet {
   @Override
   public void getPersonality() {
     System.out.println(
-        name + " the " +age+ " year old "+ breed + " " + animal + " likes to be cheeky and imitate what you say");
+        name + " the " +age+ " year old "+ breed + " " + species + " likes to be cheeky and imitate what you say");
   }
 }
