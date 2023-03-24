@@ -38,7 +38,7 @@ public abstract class Pet {
 
   abstract public int getCostPrice();
 
-  abstract public String getPersonality();
+  abstract public void getPersonality();
 
   public boolean isSold() {
     return adopted;
@@ -50,6 +50,6 @@ public abstract class Pet {
 
   @Override
   public String toString() {
-    return "Pet [Name:"+name+", Species"+animal+", Breed:"+breed+", Age:"+age+", Gender:"+gender+"]";
+    return "Pet [Name:"+name+", Species:"+animal+", Breed:"+breed+", Age:"+age+", Gender:"+gender+"]";
   }
 }

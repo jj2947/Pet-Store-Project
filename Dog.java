@@ -20,7 +20,7 @@ public class Dog extends Pet {
     }
 
     @Override
-    public String getPersonality() {
-        return name + " the " +breed+ " " +animal+" likes to play fetch at the beach and go swimming";
+    public void getPersonality() {
+        System.out.println(name + " the " +breed+ " " +animal+" likes to play fetch at the beach and go swimming");
     }
 }

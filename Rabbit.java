@@ -20,8 +20,8 @@ public class Rabbit extends Pet {
     }
 
     @Override
-    public String getPersonality() {
-        return name + " the " +breed+ " " +animal+" likes to eat carrots and hop around";
+    public void getPersonality() {
+        System.out.println(name + " the " +breed+ " " +animal+" likes to eat carrots and hop around");
     }
 }
 
