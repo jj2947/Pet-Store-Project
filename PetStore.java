@@ -18,6 +18,10 @@ public class PetStore {
     return shopName;
   }
 
+  public void printCashBalance() {
+    System.out.println(getShopName() +" cash balance is "+cashBalance);
+  }
+
   public double getCashBalance() {
     return cashBalance;
   }
