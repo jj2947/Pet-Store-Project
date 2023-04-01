@@ -10,7 +10,6 @@ public abstract class Pet {
   protected String species;
   protected String breed;
   protected Gender gender;
-  protected static int id;
   private boolean adopted;
 
   public Pet(String name, String species, String breed, String age, Gender gender) {
