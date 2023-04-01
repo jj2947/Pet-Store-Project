@@ -4,9 +4,7 @@ class Main {
 
     // Create pet shop instance and print details
     PetStore shop = new PetStore("Littlest Pet Shop", 100.0);
-    System.out.println(
-        "Starting balance for " + shop.getShopName() + " is $" + shop.getCashBalance());
-    System.out.println();
+    shop.printCashBalance();
 
     // Create some pet instance
     Rabbit lola = new Rabbit("Lola", "Bunny", "Dwarf Lop", "3", Pet.Gender.FEMALE);
@@ -14,7 +12,7 @@ class Main {
     Bird tweety = new Bird("Tweety", "Bird", "Budgie", "2", Pet.Gender.MALE);
     Dog sam = new Dog("Sam", "Dog", "German Shepherd", "4", Pet.Gender.MALE);
     Bird bigBird = new Bird("Big Bird", "Bird", "Rainbow Lorikeet", "6", Pet.Gender.FEMALE);
-	Bird chickie = new Bird("Chickie", "Bird", "Cockatoo", "38", Pet.Gender.FEMALE);
+    Bird chickie = new Bird("Chickie", "Bird", "Cockatoo", "38", Pet.Gender.FEMALE);
 
     // Buy some pets for the shop
     shop.purchasePet(lola);
@@ -22,7 +20,8 @@ class Main {
     shop.purchasePet(tweety);
     shop.purchasePet(tweety);
     shop.purchasePet(sam);
-	shop.purchasePet(chickie);
+    shop.purchasePet(chickie);
+    shop.purchasePet(bigBird);
 
     shop.printInventoryDetails();
 
@@ -36,10 +35,7 @@ class Main {
 
     shop.sellPet("Lola");
 
-	shop.purchasePet(bigBird);
-
     // Print inventory details
     shop.printInventoryDetails();
-    System.out.println();
   }
 }
