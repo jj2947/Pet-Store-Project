@@ -1,3 +1,4 @@
+// Abstract class for all pets
 public abstract class Pet {
 
   protected enum Gender {
@@ -12,6 +13,7 @@ public abstract class Pet {
   protected Gender gender;
   private boolean adopted;
 
+  // Constructor for Pet class
   public Pet(String name, String species, String breed, String age, Gender gender) {
     this.name = name;
     this.species = species;
@@ -21,10 +23,13 @@ public abstract class Pet {
     this.adopted = false;
   }
 
+  // Prints the details of the pet
   public void printDetails() {
-    System.out.println(name + "," + gender + " " + breed + " " + species + " " + age + " years old");
+    System.out.println(
+        name + "," + gender + " " + breed + " " + species + " " + age + " years old");
   }
 
+  // Getters
   public String getSpecies() {
     return species;
   }
@@ -33,11 +38,11 @@ public abstract class Pet {
     return name;
   }
 
-  abstract public int getPrice();
+  public abstract int getPrice();
 
-  abstract public int getCostPrice();
+  public abstract int getCostPrice();
 
-  abstract public void getPersonality();
+  public abstract void getPersonality();
 
   public boolean isSold() {
     return adopted;
@@ -47,8 +52,18 @@ public abstract class Pet {
     this.adopted = true;
   }
 
+  // Overrides object class' toString method
   @Override
   public String toString() {
-    return species + " [Name: "+name+", Breed: "+breed+", Age: "+age+", Gender: "+gender+"]";
+    return species
+        + " [Name: "
+        + name
+        + ", Breed: "
+        + breed
+        + ", Age: "
+        + age
+        + ", Gender: "
+        + gender
+        + "]";
   }
 }

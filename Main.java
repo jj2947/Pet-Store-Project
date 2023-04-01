@@ -1,9 +1,16 @@
+/* A program that simulates a pet shop, where pets can be purchased and sold. The program 
+tracks the cash balance of the shop and inventory of the store. The store can not have more 
+than 2 pets that are the same species. */
+
+// Author: Jessica Jiang
+// Date Last Modified: 1/4/2023
+
 class Main {
 
   public static void main(String[] args) {
 
     // Create pet shop instance and print details
-    PetStore shop = new PetStore("Littlest Pet Shop", 100.0);
+    PetStore shop = new PetStore("Littlest Pet Shop", 500);
     shop.printCashBalance();
 
     // Create some pet instance

@@ -1,12 +1,15 @@
+// Cat class extending abstract class Pet
 public class Cat extends Pet {
 
     private int price;
     private int costPrice;
 
+    // Constructor for Cat class
     public Cat (String name, String species, String breed, String age, Gender gender) {
         super(name, species, breed, age, gender);
     }
 
+    // Overrides abstract class methods
     @Override
     public int getPrice() {
         price = 250;
