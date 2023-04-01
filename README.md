@@ -12,4 +12,4 @@ I wrote this program to practice using abstract classes and OOP concepts I have 
 
 The ouput of the program with the current Main.java code
 
-![Main.java output](Output.jpeg)
+![Main.java output](Output.png)
