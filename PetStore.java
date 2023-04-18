@@ -48,6 +48,8 @@ public class PetStore {
       Pets.add(pet);
       cashBalance -= pet.getCostPrice();
       System.out.println("Added pet to shop: " + pet.toString());
+    } else if (getCashBalance() < pet.getCostPrice()) {
+      System.out.println("Not enough cash to purchase " + pet.getName());
     }
   }
 
@@ -91,38 +93,35 @@ public class PetStore {
       }
     }
 
-    // If the pet is not already in the ArrayList, and there are not already two of the 
+    // If the pet is not already in the ArrayList, and there are not already two of the
     // pet's species, return false
     return false;
   }
 
-  // Prints the inventory details for the shop, including the number of pets sold and available, 
+  // Prints the inventory details for the shop, including the number of pets sold and available,
   // cash balance and profit
   public void printInventoryDetails() {
-    System.out.println("\nInventory details for " + shopName + ":\n");
 
-    int petsInStock = 0;
-    int petsSold = 0;
+    // Print the number of pets sold and available
+    System.out.println(getPetsSold() + " pets have been sold");
+    System.out.println("There are " + getPetsAvailable() + " pets available");
 
-    // Loop through the ArrayList and print the details of each pet and whether it is sold or available
+    // Loop through the ArrayList and print the details of each pet and whether it is sold or
+    // available
     for (int i = 0; i < Pets.size(); i++) {
       Pet pet = Pets.get(i);
-      System.out.print((i + 1) + ": ");
+      System.out.print("  " + (i + 1) + ": ");
       if (pet.isSold()) {
         System.out.print("***SOLD*** ");
-        petsSold++;
+
       } else {
         System.out.print("AVAILABLE  ");
-        petsInStock++;
+
       }
       System.out.println(pet);
     }
 
-    // Print the number of pets sold and available, and the cash balance and profit
-    System.out.println("\n" + petsSold + " pets have been sold");
-    System.out.println("There are " + petsInStock + " pets available");
-
-    System.out.println("\nBalance for " + getShopName() + " is $" + getCashBalance());
+    System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
 
     double profit = getCashBalance() - this.initialBalance;
 
@@ -148,5 +147,25 @@ public class PetStore {
     } else {
       System.out.println("Could not sell: " + name);
     }
+  }
+
+  private int getPetsSold() {
+    int petsSold = 0;
+    for (Pet pet : Pets) {
+      if (pet.isSold()) {
+        petsSold++;
+      }
+    }
+    return petsSold;
+  }
+
+  private int getPetsAvailable() {
+    int petsAvailable = 0;
+    for (Pet pet : Pets) {
+      if (!pet.isSold()) {
+        petsAvailable++;
+      }
+    }
+    return petsAvailable;
   }
 }

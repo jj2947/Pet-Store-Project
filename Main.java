@@ -13,9 +13,13 @@ class Main {
     Scanner name = new Scanner(System.in);
     Scanner choice = new Scanner(System.in);
 
-    System.out.print("Enter pet shop name: ");
+    System.out.println("\n╔═╗┌─┐┌┬┐  ╔═╗┌┬┐┌─┐┬─┐┌─┐");
+    System.out.println("╠═╝├┤  │   ╚═╗ │ │ │├┬┘├┤ ");
+    System.out.println("╩  └─┘ ┴   ╚═╝ ┴ └─┘┴└─└─┘");
+
+    System.out.print("Pet Store Name: ");
     String shopName = userInput.nextLine();
-    System.out.print("Enter pet shop initial balance: ");
+    System.out.print("Pet Store initial balance: ");
     int shopBalance = userInput.nextInt();
 
     if (shopBalance < 0) {
@@ -35,43 +39,50 @@ class Main {
     while (true) {
 
       final String COMMAND_PREFIX = "pet store system> ";
-      System.out.print("\n" + COMMAND_PREFIX);
-      String userChoice = choice.nextLine();
+      System.out.print(COMMAND_PREFIX);
+      String userChoice = choice.next();
 
       // Implement the user input here
       switch (userChoice) {
         case "BUY_PET":
           System.out.print("Enter pet name: ");
-          String petName = details.nextLine();
+          String petName = details.next();
           // Makes sure the name is in title case
           petName = petName.toLowerCase();
           petName = petName.replace(petName.charAt(0), Character.toUpperCase(petName.charAt(0)));
 
           System.out.print("Enter pet species (Dog/Cat/Rabbit/Bird): ");
-          String petSpecies = details.nextLine();
+          String petSpecies = details.next();
           // Makes sure the species is in title case
           petSpecies = petSpecies.toLowerCase();
-          petSpecies = petSpecies.replace(petSpecies.charAt(0), Character.toUpperCase(petSpecies.charAt(0)));
+          petSpecies =
+              petSpecies.replace(petSpecies.charAt(0), Character.toUpperCase(petSpecies.charAt(0)));
 
           System.out.print("Enter pet breed: ");
-          String petBreed = details.nextLine();
+          String petBreed = details.next();
           // Makes sure the breed is in title case
           petBreed = petBreed.toLowerCase();
-          petBreed = petBreed.replace(petBreed.charAt(0), Character.toUpperCase(petBreed.charAt(0)));
+          petBreed =
+              petBreed.replace(petBreed.charAt(0), Character.toUpperCase(petBreed.charAt(0)));
+
+         
 
           System.out.print("Enter pet age: ");
           int petAge = details.nextInt();
-          
+
           System.out.print("Enter pet gender (Female/Male): ");
-          String petGender = details.nextLine();
+          String petGender = details.next();
           petGender = petGender.toUpperCase();
 
           Pet pet = PetFactory.createPet(petName, petBreed, petSpecies, petAge, petGender);
           shop.purchasePet(pet);
+          break;
 
         case "SELL_PET":
           System.out.print("Enter pet name: ");
           String petName2 = name.nextLine();
+          petName2 = petName2.toLowerCase();
+          petName2 = petName2.replace(petName2.charAt(0), Character.toUpperCase(petName2.charAt(0)));
           shop.sellPet(petName2);
           break;
 
