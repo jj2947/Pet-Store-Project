@@ -5,7 +5,7 @@ public class Cat extends Pet {
     private int costPrice;
 
     // Constructor for Cat class
-    public Cat (String name, String species, String breed, String age, Gender gender) {
+    public Cat (String name, String species, String breed, int age, Gender gender) {
         super(name, species, breed, age, gender);
     }
 

@@ -1,20 +1,20 @@
 // Abstract class for all pets
 public abstract class Pet {
 
-  protected enum Gender {
+  public enum Gender {
     FEMALE,
-    MALE
+    MALE,
   }
 
   protected String name;
-  protected String age;
+  protected int age;
   protected String species;
   protected String breed;
   protected Gender gender;
   private boolean adopted;
 
   // Constructor for Pet class
-  public Pet(String name, String species, String breed, String age, Gender gender) {
+  public Pet(String name, String species, String breed, int age, Gender gender) {
     this.name = name;
     this.species = species;
     this.age = age;

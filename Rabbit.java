@@ -5,7 +5,7 @@ public class Rabbit extends Pet {
     private int costPrice;
     
     // Constructor for Rabbit class
-    public Rabbit (String name, String species, String breed, String age, Gender gender) {
+    public Rabbit (String name, String species, String breed, int age, Gender gender) {
         super(name, species, breed, age, gender);
     }
 
