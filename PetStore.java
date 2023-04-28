@@ -130,11 +130,9 @@ public class PetStore {
 
   // Prints the personality of each pet in the ArrayList
   public void printPetDetails() {
-    System.out.println();
     for (Pet pet : Pets) {
       pet.getPersonality();
     }
-    System.out.println();
   }
 
   // Sells a pet by name if it is in the ArrayList and not already sold

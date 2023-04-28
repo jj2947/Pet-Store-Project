@@ -20,11 +20,24 @@ class Main {
     System.out.print("Pet Store Name: ");
     String shopName = userInput.nextLine();
     System.out.print("Pet Store initial balance: ");
-    int shopBalance = userInput.nextInt();
+    String initialBalance = userInput.next();
 
-    if (shopBalance < 0) {
-      System.out.println("Invalid balance. Balance set to 0.");
-      shopBalance = 0;
+    int shopBalance = -1;
+
+    while (shopBalance == -1) {
+      for (int i = 0; i < initialBalance.length(); i++) {
+        if ((Character.isDigit(initialBalance.charAt(0)) == false) && initialBalance.charAt(0) != '$') {
+          System.out.print("Please enter a valid balance: ");
+          initialBalance = userInput.next();
+          break;
+        } else if ((Character.isDigit(initialBalance.charAt(0)) == false)) {
+          System.out.print("Please enter a valid balance: ");
+          initialBalance = userInput.next();
+          break;
+        } else if (i == initialBalance.length()-1) {
+          shopBalance = Integer.parseInt(initialBalance);
+        }
+      }
     }
 
     PetStore shop = new PetStore(shopName, shopBalance);
@@ -65,8 +78,6 @@ class Main {
           petBreed =
               petBreed.replace(petBreed.charAt(0), Character.toUpperCase(petBreed.charAt(0)));
 
-         
-
           System.out.print("Enter pet age: ");
           int petAge = details.nextInt();
 
@@ -82,7 +93,8 @@ class Main {
           System.out.print("Enter pet name: ");
           String petName2 = name.nextLine();
           petName2 = petName2.toLowerCase();
-          petName2 = petName2.replace(petName2.charAt(0), Character.toUpperCase(petName2.charAt(0)));
+          petName2 =
+              petName2.replace(petName2.charAt(0), Character.toUpperCase(petName2.charAt(0)));
           shop.sellPet(petName2);
           break;
 
@@ -90,7 +102,7 @@ class Main {
           shop.printInventoryDetails();
           break;
 
-        case "PRINT_PET_DETAILS":
+        case "PET_DETAILS":
           shop.printPetDetails();
           break;
 
