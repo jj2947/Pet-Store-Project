@@ -30,12 +30,16 @@ class Main {
           System.out.print("Please enter a valid balance: ");
           initialBalance = userInput.next();
           break;
-        } else if ((Character.isDigit(initialBalance.charAt(0)) == false)) {
+        } else if (i>=1 && (Character.isDigit(initialBalance.charAt(i)) == false)) {
           System.out.print("Please enter a valid balance: ");
           initialBalance = userInput.next();
           break;
         } else if (i == initialBalance.length()-1) {
-          shopBalance = Integer.parseInt(initialBalance);
+          if(initialBalance.charAt(0) == '$') {
+          shopBalance = Integer.parseInt(initialBalance.substring(1));
+          } else {
+            shopBalance = Integer.parseInt(initialBalance);
+          }
         }
       }
     }
