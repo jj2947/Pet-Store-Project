@@ -73,7 +73,7 @@ class Main {
 
     // Prints the list of commands
     System.out.println("\nBUY_PET                              Buy a pet from a supplier");
-    System.out.println("SELL_PET                             Sell a pet to a custome");
+    System.out.println("SELL_PET                             Sell a pet to a customer");
     System.out.println("PRINT_INVENTORY                      Print the inventory of the store");
     System.out.println("PET_DETAILS                          Print the details of a pet");
     System.out.println("EXIT                                 Exit the program");
@@ -83,7 +83,7 @@ class Main {
     while (true) {
 
       final String COMMAND_PREFIX = "pet store system> ";
-      System.out.print("\n"+COMMAND_PREFIX);
+      System.out.print("\n" + COMMAND_PREFIX);
       String userChoice = choice.next();
 
       // Implements the user input
@@ -212,7 +212,7 @@ class Main {
           // Implements the HELP command
         case "HELP":
           System.out.println("\nBUY_PET                              Buy a pet from a supplier");
-          System.out.println("SELL_PET                             Sell a pet to a custome");
+          System.out.println("SELL_PET                             Sell a pet to a customer");
           System.out.println(
               "PRINT_INVENTORY                      Print the inventory of the store");
           System.out.println("PET_DETAILS                          Print the details of a pet");
