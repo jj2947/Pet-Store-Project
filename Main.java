@@ -83,7 +83,7 @@ class Main {
     while (true) {
 
       final String COMMAND_PREFIX = "pet store system> ";
-      System.out.print(COMMAND_PREFIX);
+      System.out.print("\n"+COMMAND_PREFIX);
       String userChoice = choice.next();
 
       // Implements the user input
@@ -147,7 +147,7 @@ class Main {
           System.out.print("Enter pet cost price: ");
           String costPrice = details.next();
 
-          int costPriceInt = Integer.parseInt(costPrice);
+          int costPriceInt = -1;
 
           // Makes sure the cost price is a valid number
           for (int i = 0; i < costPrice.length(); i++) {
