@@ -123,12 +123,14 @@ public class PetStore {
       System.out.println(pet);
     }
 
+    // Print the number of pets sold
     if (getPetsSold() == 1) {
       System.out.println("There is " + getPetsSold() + " pet sold");
     } else {
       System.out.println("There are " + getPetsSold() + " pets sold");
     }
 
+    // Print the cash balance and profit
     System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
 
     double profit = getCashBalance() - this.initialBalance;
