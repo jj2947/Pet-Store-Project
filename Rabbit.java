@@ -5,8 +5,9 @@ public class Rabbit extends Pet {
     private int costPrice;
     
     // Constructor for Rabbit class
-    public Rabbit (String name, String species, String breed, int age, Gender gender) {
+    public Rabbit (String name, String species, String breed, int age, int costPrice, Gender gender) {
         super(name, species, breed, age, gender);
+        this.costPrice = costPrice;
     }
 
     // Overrides abstract class methods
@@ -18,7 +19,6 @@ public class Rabbit extends Pet {
 
     @Override
     public int getCostPrice() {
-        costPrice = 35;
         return costPrice;
     }
 

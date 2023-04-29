@@ -143,6 +143,31 @@ class Main {
           }
           int petAgeInt = Integer.parseInt(petAge);
 
+          // Asks the user for the pet cost
+          System.out.print("Enter pet cost price: ");
+          String costPrice = details.next();
+
+          int costPriceInt = Integer.parseInt(costPrice);
+
+          // Makes sure the cost price is a valid number
+          for (int i = 0; i < costPrice.length(); i++) {
+            if ((Character.isDigit(costPrice.charAt(0)) == false) && costPrice.charAt(0) != '$') {
+              System.out.print("Please enter a valid balance: ");
+              costPrice = details.next();
+              i = 0;
+            } else if (i >= 1 && (Character.isDigit(costPrice.charAt(i)) == false)) {
+              System.out.print("Please enter a valid balance: ");
+              costPrice = details.next();
+              i = 0;
+            } else if (i == costPrice.length() - 1) {
+              if (costPrice.charAt(0) == '$') {
+                costPriceInt = Integer.parseInt(costPrice.substring(1));
+              } else {
+                costPriceInt = Integer.parseInt(costPrice);
+              }
+            }
+          }
+
           // Asks user for the pet gender
           System.out.print("Enter pet gender (Female/Male): ");
           String petGender = details.next();
@@ -156,7 +181,9 @@ class Main {
           }
 
           // Creates a new Pet object using factory design pattern
-          Pet pet = PetFactory.createPet(petName, petBreed, petSpecies, petAgeInt, petGender);
+          Pet pet =
+              PetFactory.createPet(
+                  petName, petBreed, petSpecies, petAgeInt, costPriceInt, petGender);
           shop.purchasePet(pet);
           break;
 
@@ -184,12 +211,13 @@ class Main {
 
           // Implements the HELP command
         case "HELP":
-          System.out.println("BUY_PET");
-          System.out.println("SELL_PET");
-          System.out.println("PRINT_INVENTORY");
-          System.out.println("PRINT_PET_DETAILS");
-          System.out.println("EXIT");
-          System.out.println("HELP");
+          System.out.println("\nBUY_PET                              Buy a pet from a supplier");
+          System.out.println("SELL_PET                             Sell a pet to a custome");
+          System.out.println(
+              "PRINT_INVENTORY                      Print the inventory of the store");
+          System.out.println("PET_DETAILS                          Print the details of a pet");
+          System.out.println("EXIT                                 Exit the program");
+          System.out.println("HELP                                 Print the list of commands");
           break;
 
           // Implements the EXIT command

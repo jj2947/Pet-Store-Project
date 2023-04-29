@@ -102,9 +102,12 @@ public class PetStore {
   // cash balance and profit
   public void printInventoryDetails() {
 
-    // Print the number of pets sold and available
-    System.out.println(getPetsSold() + " pets have been sold");
-    System.out.println("There are " + getPetsAvailable() + " pets available");
+    // Print the number of pets available
+    if (getPetsAvailable() == 1) {
+      System.out.println("There is " + getPetsAvailable() + " pet available");
+    } else {
+      System.out.println("There are " + getPetsAvailable() + " pets available");
+    }
 
     // Loop through the ArrayList and print the details of each pet and whether it is sold or
     // available
@@ -116,9 +119,14 @@ public class PetStore {
 
       } else {
         System.out.print("AVAILABLE  ");
-
       }
       System.out.println(pet);
+    }
+
+    if (getPetsSold() == 1) {
+      System.out.println("There is " + getPetsSold() + " pet sold");
+    } else {
+      System.out.println("There are " + getPetsSold() + " pets sold");
     }
 
     System.out.println("Balance for " + getShopName() + " is $" + getCashBalance());
